@@ -43,4 +43,12 @@ public class UserController {
         return ResponseEntity.created(lcoation).build();
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable int id) {
+        User user = service.deleteById(id);
+        if (user == null) {
+            throw new UserNotFoundException("ID ["+id+"] not found");
+        }
+
+    }
 }
