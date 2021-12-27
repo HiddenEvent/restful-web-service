@@ -29,9 +29,9 @@ public class UserController {
         if (user == null) {
             throw new UserNotFoundException("ID ["+id+"] not found");
         }
-
         return user;
     }
+
     @PostMapping("")
     public ResponseEntity<User> creatUser(@RequestBody User user) {
         User savedUser = service.save(user);
@@ -42,4 +42,5 @@ public class UserController {
         log.info(lcoation.getPath());
         return ResponseEntity.created(lcoation).build();
     }
+
 }
