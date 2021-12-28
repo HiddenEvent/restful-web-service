@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
@@ -33,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping("")
-    public ResponseEntity<User> creatUser(@RequestBody User user) {
+    public ResponseEntity<User> creatUser(@Valid @RequestBody User user) {
         User savedUser = service.save(user);
         URI lcoation = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/{id}")
