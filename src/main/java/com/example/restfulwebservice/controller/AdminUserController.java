@@ -36,7 +36,10 @@ public class AdminUserController {
         return mapping;
     }
 
-    @GetMapping("/v1/user/{id}")
+    //@GetMapping("/v1/user/{id}") // uri로 버저닝 처리 -- 일반 브라우저에서 실행 O
+    //@GetMapping(value = "/user/{id}", params = "version=1") // 파라미터로 버저닝 처리 -- 일반 브라우저에서 실행 O
+    //@GetMapping(value = "/user/{id}", headers = "X-API-VERSION=1") // 헤더 버저닝 처리 -- 일반 브라우저에서 실행 X
+    @GetMapping(value = "/user/{id}", produces = "application/vnd.company.appv1+json") // mime 타입으로 버저닝 처리 -- 일반 브라우저에서 실행 X
     public MappingJacksonValue retrieveUser(@PathVariable int id) {
         User user = service.findOne(id);
         if (user == null) {
@@ -49,7 +52,10 @@ public class AdminUserController {
         return mapping;
     }
 
-    @GetMapping("/v2/user/{id}")
+    //@GetMapping("/v2/user/{id}")
+    //@GetMapping(value = "/user/{id}", params = "version=2") // 파라미터로 버저닝 처리
+    //@GetMapping(value = "/user/{id}", headers = "X-API-VERSION=2") // 헤더 버저닝 처리
+    @GetMapping(value = "/user/{id}", produces = "application/vnd.company.appv2+json") // mime 타입으로 버저닝 처리
     public MappingJacksonValue retrieveUserV2(@PathVariable int id) {
         User user = service.findOne(id);
         if (user == null) {
