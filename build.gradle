@@ -20,8 +20,8 @@ repositories {
 
 dependencies {
     /* swagger 추가 */
-    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
-    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
     /* swagger 끝 */
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'/* xml 데이터 처리를 위한 추가*/
     
