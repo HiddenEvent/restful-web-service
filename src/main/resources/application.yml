@@ -1,9 +1,17 @@
 server:
   port: 8080
+
+# swagger 설정 관련
 spring:
   main:
     allow-bean-definition-overriding: true
-
+# actuator 설정 관련
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 #logging:
 #  level:
+
 #    org.springframework: debug
