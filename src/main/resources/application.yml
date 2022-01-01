@@ -1,17 +1,24 @@
 server:
   port: 8080
 
-# swagger 설정 관련
+
 spring:
+  # swagger 설정 관련
   main:
     allow-bean-definition-overriding: true
+  # security 설정
+  security:
+    user:
+      name: username
+      password: 1234
 # actuator 설정 관련
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+
 #logging:
 #  level:
-
 #    org.springframework: debug

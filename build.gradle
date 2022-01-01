@@ -24,9 +24,9 @@ dependencies {
     implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
     /* swagger 끝 */
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'/* xml 데이터 처리를 위한 추가*/
-    
     implementation 'org.springframework.boot:spring-boot-starter-hateoas' /*HATEOAS 추가*/
     implementation 'org.springframework.boot:spring-boot-starter-actuator' /*서버 모니터링 기능 추가*/
+    implementation 'org.springframework.boot:spring-boot-starter-security' /*Security 추가*/
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
