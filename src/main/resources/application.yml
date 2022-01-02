@@ -1,9 +1,35 @@
 server:
   port: 8080
+
+
 spring:
+  # swagger 설정 관련
   main:
     allow-bean-definition-overriding: true
+  # security 설정
+  security:
+    user:
+      name: username
+      password: 1234
+  # Jpa설정
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
 
-#logging:
-#  level:
-#    org.springframework: debug
+  # h2 설정
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+# actuator 설정 관련
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+logging:
+  level:
+    org.springframework: debug

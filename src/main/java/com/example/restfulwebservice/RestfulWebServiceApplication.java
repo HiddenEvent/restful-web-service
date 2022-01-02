@@ -3,11 +3,13 @@ package com.example.restfulwebservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import springfox.documentation.swagger.configuration.SwaggerCommonConfiguration;
 
 import java.util.Locale;
-
+@Import(SwaggerCommonConfiguration.class)
 @SpringBootApplication
 public class RestfulWebServiceApplication {
 
