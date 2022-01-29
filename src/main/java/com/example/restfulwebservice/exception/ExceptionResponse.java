@@ -11,6 +11,9 @@ import java.util.Date;
 @AllArgsConstructor
 public class ExceptionResponse {
     private Date timestamp;
-    private String message;
-    private String details;
+    private String errorMessage;
+    private String errorObject;
+    private String errorField;
+    private String requestUrl;
+
 }
